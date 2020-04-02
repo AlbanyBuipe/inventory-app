@@ -11,14 +11,14 @@ const {
 } = hh(h)
 
 const adminView = (dispatch, model) => {
-    return div({className: 'tc' }, [
+    return div({className: '' }, [
         formView(dispatch, model),
         tableView(dispatch, model),
-        pre({
-                className: 'shadow-5 grow white pa4 bb bt br bl stripe-dark br-100 bn'
-            },
-            JSON.stringify(model, null, 2)
-        )
+        // pre({
+        //         className: 'shadow-5 grow white pa4 bb bt br bl stripe-dark br-100 bn'
+        //     },
+        //     JSON.stringify(model, null, 2)
+        // )
     ])
 }
 

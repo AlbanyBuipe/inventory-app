@@ -62,9 +62,12 @@ const formView = (dispatch, model) => {
                 dispatch(showFormMsg(false))
             }
         }, [
-            fieldSet('Crop Kind (Name)', model.cropKind, e => dispatch(kindInputMsg(e.target.value))),
-            fieldSet('Crop Quantity (Bags)', model.cropQuantity || '', e => dispatch(quantityInputMsg(e.target.value))),
-            fieldSet('Unit Price per Crop (GHS)', model.unitPrice || '', e => dispatch(unitPriceInputMsg(e.target.value))),
+            // fieldSet('Crop Kind (Name)', model.cropKind, e => dispatch(kindInputMsg(e.target.value))),
+            fieldSet('Item (Name)', model.cropKind, e => dispatch(kindInputMsg(e.target.value))),
+            // fieldSet('Crop Quantity (Bags)', model.cropQuantity || '', e => dispatch(quantityInputMsg(e.target.value))),
+            fieldSet('Item Quantity', model.cropQuantity || '', e => dispatch(quantityInputMsg(e.target.value))),
+            // fieldSet('Unit Price per Crop (GHS)', model.unitPrice || '', e => dispatch(unitPriceInputMsg(e.target.value))),
+            fieldSet('Unit Price per Item (GHS)', model.unitPrice || '', e => dispatch(unitPriceInputMsg(e.target.value))),
             formControls(dispatch)
         ])
     }
@@ -72,7 +75,7 @@ const formView = (dispatch, model) => {
     return button({
         className: 'center pv2 ph3 br2 code bn white bg-purple shadow-5 dim pointer',
         onclick: () => dispatch(showFormMsg(true))
-    }, 'New Crops')
+    }, 'Add Items to Stock')
 }
 
 export default formView
